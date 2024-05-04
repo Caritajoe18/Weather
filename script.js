@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY";
+const apiKey = "b90925c540132691b80b73a16fc54f2e";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
 const locationInput = document.getElementById("locationInput");
@@ -12,6 +12,7 @@ searchButton.addEventListener("click", () => {
   if (location) {
     fetchWeather(location);
   }
+  console.log(location)
 });
 
 function fetchWeather(location) {
@@ -23,6 +24,8 @@ function fetchWeather(location) {
       locationElement.textContent = data.name;
       temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
       descriptionElement.textContent = data.weather[0].description;
+
+      
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error);
